@@ -1,21 +1,16 @@
-import chromadb
-from chromadb.utils import embedding_functions
+import chromadb     #0.4.24
+from   chromadb.utils import embedding_functions
 
-CHROMA_DATA_PATH = "data/chromaDB/"
-EMBED_MODEL = "all-MiniLM-L6-v2"
-COLLECTION_NAME = "demo_docs"
+DB_PATH  = "data/chromaDB/"
+EB_MODEL = "all-MiniLM-L6-v2"
+COL_NAME = "pure_chroma_collection"
 
-client = chromadb.PersistentClient(path=CHROMA_DATA_PATH)
+client = chromadb.PersistentClient(path=DB_PATH)
 
-embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name=EMBED_MODEL
-)
+embedding_func = embedding_functions.SentenceTransformerEmbeddingFunction(model_name=EB_MODEL)
 
 collection = client.get_or_create_collection(
-    name=COLLECTION_NAME,
-    embedding_function=embedding_func,
-    metadata={"hnsw:space": "cosine"},
-)
+    name=COL_NAME,  embedding_function=embedding_func,  metadata={"hnsw:space": "cosine"},)
 
 documents = [
     "The latest iPhone model comes with impressive features and a powerful camera.",
