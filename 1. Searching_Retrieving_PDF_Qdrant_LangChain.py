@@ -1,4 +1,3 @@
-# import chromadb
 import asyncio
 
 from langchain_community.vectorstores import Qdrant
@@ -11,7 +10,6 @@ from langchain.text_splitter import CharacterTextSplitter
 loader = PyPDFLoader(file_path="./data/pdf/Python Programming - An Introduction To Computer Science.pdf")
 documents = loader.load()
 
-# split into chunks
 text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=0)
 docs = text_splitter.split_documents(documents=documents)
 
