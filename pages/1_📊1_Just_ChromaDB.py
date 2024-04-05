@@ -1,15 +1,16 @@
-import streamlit as st
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+import streamlit as st, sqlite3
+from streamlit import logger
+
 from utils.st_def import st_logo, st_load_book
-import openai, PyPDF2, os, time, pandas as pd
 
 st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
 st_load_book()
-
-pdf1 = st.file_uploader('Upload your PDF Document', type='pdf')
 #-----------------------------------------------
-if pdf1:
-    pdfReader = PyPDF2.PdfReader(pdf1)
-    st.session_state['pdfreader'] = pdfReader
-    st.success(" has loaded.")
-else:
-    st.info("waiting for loading ...")
+
+st.write(logger.get_logger("SMI_APP"))
+st.write(f"{sys.version}")
+st.header(f"{sqlite3.sqlite_version}")
