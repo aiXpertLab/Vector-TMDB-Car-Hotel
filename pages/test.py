@@ -9,3 +9,7 @@ import sqlite3
 app_logger = logger.get_logger("SMI_APP")
 app_logger.info(f"{sqlite3.sqlite_version}")
 app_logger.info(f"{sys.version}")
+
+st.write(logger.get_logger("SMI_APP"))
+st.write(f"{sys.version}")
+st.header(f"{sqlite3.sqlite_version}")
