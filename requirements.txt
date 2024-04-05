@@ -4,3 +4,4 @@ openai
 tenacity
 PyPDF2
 chromadb
+pysqlite3-binary

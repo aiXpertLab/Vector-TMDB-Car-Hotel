@@ -4,6 +4,10 @@
 # Today, the concept of embeddings is revolutionizing the way AI systems understand and process information. 
 # Let’s explore the world of embeddings and how they lead us to the powerful concept of vector databases.
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import chromadb
 chroma_client = chromadb.Client()
 
