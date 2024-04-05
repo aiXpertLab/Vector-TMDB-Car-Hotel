@@ -19,6 +19,7 @@ collection.add(
     ids=["id1", "id2"]
 )
 
+
 results = collection.query(
     query_texts=["Which food is the best?"],
     n_results=1
