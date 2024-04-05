@@ -13,4 +13,4 @@ st_load_book()
 
 st.write(logger.get_logger("SMI_APP"))
 st.write(f"{sys.version}")
-st.header(f"{sqlite3.sqlite_version}")
+st.header(f"sqlite version: {sqlite3.sqlite_version}")
