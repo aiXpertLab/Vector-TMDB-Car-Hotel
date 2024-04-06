@@ -5,8 +5,8 @@ if "STREAMLIT_SERVER_ENABLED" in os.environ and "IS_STREAMLIT_SERVER" in os.envi
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 else:
     print("local ----------------------------------side ")
-    import sqlite3
 
+import sqlite3
 import streamlit as st
 from streamlit import logger
 from utils.st_def import st_logo, st_load_book
