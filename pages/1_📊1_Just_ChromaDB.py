@@ -6,9 +6,10 @@ if "STREAMLIT_SERVER_ENABLED" in os.environ and "IS_STREAMLIT_SERVER" in os.envi
 else:
     import sqlite3
 
-import streamlit as st, chromadb
+import streamlit as st
 from streamlit import logger
 from utils.st_def import st_logo, st_load_book
+import chromadb
 
 st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
 st_load_book()
