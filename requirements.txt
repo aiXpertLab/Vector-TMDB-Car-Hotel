@@ -6,4 +6,4 @@ PyPDF2
 chromadb
 pysqlite3-binary
 sentence_transformers
-plars
+polars
