@@ -3,8 +3,10 @@ if "STREAMLIT_SERVER_ENABLED" in os.environ and "IS_STREAMLIT_SERVER" in os.envi
     print("server side")
     __import__('pysqlite3') 
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+else:
+    import sqlite3
 
-import streamlit as st, sqlite3, chromadb
+import streamlit as st, chromadb
 from streamlit import logger
 from utils.st_def import st_logo, st_load_book
 
