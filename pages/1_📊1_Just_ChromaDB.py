@@ -1,9 +1,10 @@
 import sys, os
 if "STREAMLIT_SERVER_ENABLED" in os.environ and "IS_STREAMLIT_SERVER" in os.environ: 
-    print("server side")
+    print("server side---------------------------")
     __import__('pysqlite3') 
     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 else:
+    print("local ----------------------------------side ")
     import sqlite3
 
 import streamlit as st
