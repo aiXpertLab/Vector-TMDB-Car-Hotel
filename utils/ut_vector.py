@@ -1,6 +1,14 @@
-import sys, os
-import sqlite3
-import chromadb
+import sys, os, platform
+
+if not platform.processor()[:7]=="Intel64":
+  __import__('pysqlite3'); 
+  sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+  print(f'server-------------------  {platform.processor()}')
+else:
+  print(f'local-------------------  {platform.processor()}')
+
+
+import sqlite3, chromadb
 
 def chroma_collection(name):
     chroma_client = chromadb.Client()
@@ -9,13 +17,3 @@ def chroma_collection(name):
 
 
 
-# import sys, os, platform
-# import streamlit as st
-
-# print(platform.processor()[:7]=="Intel64")
-
-# if not platform.processor()[:7]=="Intel64":
-#   __import__('pysqlite3'); 
-#   sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-# else:
-#   st.write('local')
