@@ -5,6 +5,7 @@ from utils import st_def, ut_vector
 st_def.st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
 st_def.st_load_book()
 st.write(logger.get_logger("SMI_APP"))
+st.write(logger.get_logger("SMI_APP"))
 #-----------------------------------------------
 collection = ut_vector.chroma_collection(name="collection1_1")
 collection.add(
