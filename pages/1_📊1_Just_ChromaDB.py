@@ -1,22 +1,12 @@
-import sys, os
-__import__('pysqlite3') 
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
-import sqlite3
 import streamlit as st
 from streamlit import logger
-from utils.st_def import st_logo, st_load_book
-import chromadb
+from utils import st_def, ut_vector
 
-st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
-st_load_book()
-#-----------------------------------------------
+st_def.st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
+st_def.st_load_book()
 st.write(logger.get_logger("SMI_APP"))
-# st.write(f"sys version: {sys.version}")
-# st.header(f"sqlite version: {sqlite3.sqlite_version}")
 #-----------------------------------------------
-chroma_client = chromadb.Client()
-collection = chroma_client.get_or_create_collection(name="collection1_1")
+collection = ut_vector.chroma_collection(name="collection1_1")
 collection.add(
     documents=["steak", "python", "tiktok", "safety", "health", "environment"],
     metadatas=[{"source": "food"}, {"source": "progamming language"}, {"source": "social media"}, {"source": "government"}, {"source": "body"}, {"source": "living condition"}],
