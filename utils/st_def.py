@@ -1,3 +1,4 @@
+
 import streamlit as st
 from streamlit_extras.add_vertical_space import add_vertical_space
 
@@ -53,18 +54,14 @@ def st_text_preprocessing_contents():
 def st_load_book():
     st.image("./data/images/chroma.png")
 
-def st_read_pdf():
+def st_create_collection():
     st.markdown("""
-Because OpenAI has a limit on the input prompt size, we would like to send the data to be summarized in parts. 
-There can be multiple ways to split the text. For the sake of simplicity, we will divide the whole book on the basis of pages. 
-A **better strategy** will be to split it on the basis of paragraphs. However, it will increase the number of API calls increasing the overall time.
-
-We will store each page in a list and then summarize it.
-    """)    
+You then instantiate a PersistentClient() object, create the collection, and add data to the collection. In lines 29 to 39, you add data to the collection in batches using the more-itertools library. Calling batched(document_indices, 166) breaks document_indices into a list of tuples, each with size 166. ChromaDB’s current maximum batch size is 166, but this might change in the future.    """)    
     st.image("./data/images/book.png")
 
 def st_summary():
-    st.markdown("Now we will start prompting. This is a matter of experiment to figure out the best prompt. However, there are a few basic guidelines on how to do it efficiently. In some upcoming articles, we will discuss the art of prompting in more detail. You can use the prompt for now, which has worked well for me. ")
+    st.markdown("In your car_data_etl.py script, prepare_car_reviews_data() accepts the path to the car reviews dataset and a list of vehicle years to filter on, and it returns a dictionary with the review data properly formatted for ChromaDB. You can include different vehicle years, but keep in mind that the more years you include, the longer it’ll take to build the collection. By default, you’re only including vehicles from 2017.")
+    st.markdown("In this block, you import prepare_car_reviews_data() from car_data_etl.py, store the path to the raw review CSV datasets, and create chroma_car_reviews_dict, which stores the reviews in a ChromaDB-compatible format. You then display the ID, document text, and metadata associated with one of the reviews.")
     # st.image("./data/images/featureengineering.png")
 
 def st_case_study():
