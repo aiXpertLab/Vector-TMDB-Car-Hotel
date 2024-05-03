@@ -3,7 +3,7 @@ from streamlit import logger
 from utils import st_def, ut_vector
 
 st_def.st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
-st_def.st_load_book()
+st.image("./data/images/chroma.png")
 st.write(platform.processor())
 st.write(logger.get_logger("SMI_APP"))
 #-----------------------------------------------
@@ -14,7 +14,7 @@ collection.add(
     ids=["id1", "id2", "id3", "id4", "id5", "id6"]
 )
 
-qa = st.text_input('🌐 Ask the Chroma: ')
+qa = st.text_input('🌐steak python tiktok safety health environment')
 if qa:
     results = collection.query(query_texts=[qa],    n_results=1)
     st.write(results)

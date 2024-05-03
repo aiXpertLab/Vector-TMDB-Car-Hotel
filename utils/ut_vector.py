@@ -12,6 +12,7 @@ import sqlite3, chromadb, pathlib
 from chromadb.utils import embedding_functions
 from more_itertools import batched
 
+
 def chroma_collection(name):
     chroma_client = chromadb.Client()
     collection = chroma_client.get_or_create_collection(name=name)

@@ -8,7 +8,6 @@ import chromadb     #0.4.24
 from   chromadb.utils import embedding_functions
 
 st_def.st_logo(title='Welcome 👋 to Chroma DB!', page_title="Chroma DB ",)
-st_def.st_load_book()
 #-----------------------------------------------
 EB_MODEL = "all-MiniLM-L6-v2"
 COL_NAME = "collection2"

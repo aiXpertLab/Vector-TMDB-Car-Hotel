@@ -51,8 +51,6 @@ def st_text_preprocessing_contents():
         - Perform Stemming and Lemmatization
     """)    
 
-def st_load_book():
-    st.image("./data/images/chroma.png")
 
 def st_create_collection():
     st.markdown("""
