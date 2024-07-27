@@ -3,7 +3,7 @@ from streamlit_extras.stateful_button import button
 from utils import st_def, car, ut_vector
 
 st_def.st_logo(title = "Welcome 👋 to Summary!", page_title="Summary",)
-tab1, tab2, tab3, tab4= st.tabs(["🔰from csv to Dictionary", "➡️Build Collection🎍", "🪻Query based on Chroma Only", "🍍OpenAI Summary🏅"])
+tab1, tab2, tab3, tab4= st.tabs(["🔰from csv to Dictionary", "➡️Build Collection🎍", "🪻Query based on Chroma Only", "🍍OpenAI Summary"])
 #------------------------------------------------------------------------
 import chromadb
 from chromadb.utils import embedding_functions

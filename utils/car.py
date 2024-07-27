@@ -66,5 +66,5 @@ def prepare_car_reviews_data(data_path: pathlib.Path, vehicle_years: list[int] =
 
 def st_summary():
     st.markdown("In your car.py script, prepare_car_reviews_data() accepts the path to the car reviews dataset and a list of vehicle years to filter on, and it returns a dictionary with the review data properly formatted for ChromaDB. You can include different vehicle years, but keep in mind that the more years you include, the longer it’ll take to build the collection. By default, you’re only including vehicles from 2017.")
-    st.markdown("In this block, you import prepare_car_reviews_data() from car.py, store the path to the raw review CSV datasets, and create chroma_car_reviews_dict, which stores the reviews in a ChromaDB-compatible format. You then display the ID, document text, and metadata associated with one of the reviews.")
+    st.markdown("In this block, you import prepare_car_reviews_data() from car.py, store the path to the raw review csv datasets, and create chroma_car_reviews_dict, which stores the reviews in a ChromaDB-compatible format. You then display the ID, document text, and metadata associated with one of the reviews.")
     # st.image("./data/images/featureengineering.png")

@@ -130,7 +130,7 @@ def write_ids_csv(ids, year, CSV_HEADER, TMDB_API_KEY):
     # Grab list of ids for all films made in {YEAR}
     movie_list = list(set(ids))
 
-    FILE_NAME = f'./data/{year}_movie_collection_data.csv'
+    FILE_NAME = f'./data/TMDB/csv/{year}_movie_collection_data.csv'
 
     # Creating file
     with open(FILE_NAME, 'w') as f:
